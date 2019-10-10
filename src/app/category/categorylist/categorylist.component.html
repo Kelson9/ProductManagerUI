@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+<div class="panel-heading">
+    <h2>CATEGORY</h2>
+        <div class="panel-body"></div>
+        <table class="table table-striped">
+<thead>
+<tr>
+<th>Category name</th>
+<th>category id</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let category of categories" style="color:red" >
+<td>{{category.title}}</td>
+<td>{{category.id}}</td>
+<td><button (click)="deletecategory(category.id)" class="btn btn-danger">Delete</button>
+<button (click)="categorydetails(category.id)" class="btn btn-info" style="margin-left:10px">View details </button>
+<button (click)="categoryupdate()" class="btn btn-primary">Update</button>
+</td>
+</tr>
+</tbody>
+        </table>
+    </div>
+</div>
