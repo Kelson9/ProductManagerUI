@@ -15,6 +15,7 @@ import { CreatecategoryComponent } from './category/createcategory/createcategor
 import {ProductService} from './product.service';
 import { CreateproductComponent } from './product/createproduct/createproduct.component';
 import { ProductdetailsComponent } from './product/productdetails/productdetails.component';
+import { ProductupdateComponent } from './product/productupdate/productupdate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ProductdetailsComponent } from './product/productdetails/productdetails
     CreatecategoryComponent,
     CreateproductComponent,
     ProductdetailsComponent,
+    ProductupdateComponent,
 
     
   ],

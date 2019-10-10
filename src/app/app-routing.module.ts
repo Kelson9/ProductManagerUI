@@ -7,6 +7,7 @@ import {CategoryupdateComponent} from './category/categoryupdate/categoryupdate.
 import { ProductComponent } from './product/product.component';
 import {CreateproductComponent} from './product/createproduct/createproduct.component';
 import { ProductdetailsComponent } from './product/productdetails/productdetails.component';
+import { ProductupdateComponent } from './product/productupdate/productupdate.component';
 const Routes:Routes=[
     {path:'',redirectTo:'category',pathMatch:'full'},
     {path:'add',component:CreatecategoryComponent},
@@ -16,6 +17,7 @@ const Routes:Routes=[
     {path:'product',component:ProductComponent},
     {path:'addproduct',component:CreateproductComponent},
      {path:'product/:id',component:ProductdetailsComponent},
+     {path:'productupdate/:id',component:ProductupdateComponent}
 ]
 @NgModule({
 imports:[RouterModule.forRoot(Routes)],

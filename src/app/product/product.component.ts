@@ -33,6 +33,9 @@ deleteproduct(movie_id:number){
 productdetails(id:number){
   this.router.navigate(['product',id]);
 }
+productupdate(id:number){
+  this.router.navigate(['productupdate',id]);
+}
 }
 
 
