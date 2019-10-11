@@ -1,0 +1,8 @@
+<h1>Product details</h1>
+<div *ngIf="products">
+<div>
+<div><span>name:</span>{{products.name}}</div>
+    </div>
+<div><span>id:</span>{{products.id}}</div>
+</div>
+<button (click)="list()" class="btn btn-primary">Go back</button>
