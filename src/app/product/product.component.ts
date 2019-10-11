@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
 import {ProductService} from 'src/app/product.service';
 import {ApiService} from 'src/app/api.service';
@@ -9,7 +9,7 @@ import {ApiService} from 'src/app/api.service';
 })
 export class ProductComponent implements OnInit {
   products:[];
-  categories:[];
+  @Input() categories:[];
   constructor(private ps:ProductService,private apiservice:ApiService,
     private router:Router) { }
 
