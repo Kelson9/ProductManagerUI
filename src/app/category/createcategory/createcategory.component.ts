@@ -25,8 +25,8 @@ save(){
   this.apiservice.createcategory(this.category).subscribe(data=>{
     console.log(data);
     this.category=new Model();
-    this.gotoList();
   });
+  this.gotoList();
 }
 onSubmit(){
   this.submitted=true;

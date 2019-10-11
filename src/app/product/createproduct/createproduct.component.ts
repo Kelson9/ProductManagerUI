@@ -23,9 +23,8 @@ newCategory():void{
 save(){
   this.ps.createproduct(this.product).subscribe(data=>{
     console.log(data);
-    this.product=new Model();
+    this.product=new Model();});
     this.gotoList();
-  });
 }
 onSubmit(){
   this.submitted=true;

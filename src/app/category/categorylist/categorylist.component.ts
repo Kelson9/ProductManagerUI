@@ -27,4 +27,7 @@ deletecategory(movie_id:number){
 categorydetails(id:number){
   this.router.navigate(['details',id]);
 }
+categoryupdate(id:any){
+  return this.router.navigate(['/update',id])
+}
 }
