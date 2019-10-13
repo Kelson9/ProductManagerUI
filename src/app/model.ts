@@ -1,7 +1,6 @@
 export class Model{
 id:number;
 name:string;
-amount:number;
+quantity:number;
 price:number;
-
 }

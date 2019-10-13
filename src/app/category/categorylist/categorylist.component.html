@@ -6,14 +6,12 @@
 <thead>
 <tr>
 <th>Category name</th>
-<th>category id</th>
 <th>Actions</th>
 </tr>
 </thead>
 <tbody>
 <tr *ngFor="let category of categories" style="color:black" >
-<td>{{category.title}}</td>
-<td>{{category.id}}</td>
+<td>{{category.name}}</td>
 <td><button (click)="deletecategory(category.id)" class="btn btn-info">Delete</button>
 <button (click)="categorydetails(category.id)" class="btn btn-info" style="margin-left:10px">View details </button>
 <button (click)="categoryupdate(category.id)" class="btn btn-info">Edit</button>

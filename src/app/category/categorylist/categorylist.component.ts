@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { Router } from '@angular/router';
+import { Model } from 'src/app/model';
 
 @Component({
   selector: 'app-categorylist',
@@ -8,19 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./categorylist.component.css']
 })
 export class CategorylistComponent implements OnInit {
-categories:[];
+categories:Model[];
+id:number;
   constructor(private apiservice:ApiService,
     private router:Router) { }
 
   ngOnInit() {
   
- this.apiservice.getcategorylist().subscribe((data:any)=>{
-  this.categories=data.results;
+ this.apiservice.getcategorylist().subscribe((data:Model[])=>{
+  this.categories=data;
   console.log(this.categories);
 });
 }
-deletecategory(movie_id:number){
-  this.apiservice.deletecategory(movie_id).subscribe((data)=>{
+deletecategory(id:number){
+  this.apiservice.deletecategory(this.id).subscribe((data)=>{
     console.log(data);
   });
 }

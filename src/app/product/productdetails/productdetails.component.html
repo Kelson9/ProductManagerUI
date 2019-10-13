@@ -1,8 +1,29 @@
-<h1>Product details</h1>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h2>PRODUCT DETAILS</h2>
+          <div class="panel-body">
 <div *ngIf="products">
-<div>
-<div><span>name:</span>{{products.name}}</div>
-    </div>
-<div><span>id:</span>{{products.id}}</div>
+       <table class="table table-striped">
+<thead>
+    <tr>
+    <th><span>name:</span></th>
+   <th> <span>id:</span></th>
+   <th><span>quantity:</span></th>
+  <th><span>Price:</span><th>
+    <th><span>Category id:</span></th>
+   <th><span>Category name:</span></th>
+  </tr>
+    </thead>
+    <tbody>
+<td><div>{{products.name}}</div></td>
+<td><div>{{products.id}}</div></td>
+<td><div>{{products.quantity}}</div></td>
+<td><div>{{products.price}}</div></td>
+<td><div>{{products.category.id}}</div></td>
+<td><div>{{products.category.name}}</div></td>
+</tbody>
+</table>
 </div>
+</div></div></div>
 <button (click)="list()" class="btn btn-primary">Go back</button>

@@ -8,8 +8,8 @@ export class ApiService {
 
   constructor(private http:HttpClient) { 
   }
-  getcategory(id:number):Observable<any>{
-return this.http.get('');
+  getcategory(id:number){
+return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category/'+id);
   }
   createcategory(category:object):Observable<object>{
     return this.http.post('','');
@@ -18,9 +18,9 @@ return this.http.get('');
     return this.http.put('','');
   }
   getcategorylist():Observable<any>{
-    return this.http.get('');
+    return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category');
   }
-  deletecategory(movie_id:number):Observable<any>{
+  deletecategory(id:number):Observable<any>{
     return this.http.delete('');
   }
   }

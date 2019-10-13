@@ -14,17 +14,16 @@ export class ProductdetailsComponent implements OnInit {
   templateUrl: './categorydetails.component.html',
   styleUrls: ['./categorydetails.component.css']
 })
-id:number;
-products:Model;
+id:any;
+products:any;
   constructor(private ps:ProductService,
     private router:Router,
     private active:ActivatedRoute) {
-     /* this.id=this.router.snapshot.params['id'];*/
+
      }
 
   ngOnInit() {
-    this.products=new Model();
-    this.ps.getproduct(this.id).subscribe((data)=>{
+    return this.ps.getproduct(this.id).subscribe((data)=>{
       this.products=data;
       console.log(this.products);
     });
@@ -33,4 +32,17 @@ products:Model;
 list(){
   this.router.navigate(['product']);
 }
+
 }
+/*movie:any;
+id:any;
+  constructor(private apiservice:ApiService,
+    private active:ActivatedRoute){
+      this.id = this.active.snapshot.params.id;
+
+     }
+
+  ngOnInit() {
+    return this.apiservice.getMovie(this.id).subscribe((data:any)=>{
+      this.movie=data;
+      console.log(this.movie);*/

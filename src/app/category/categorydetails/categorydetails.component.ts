@@ -9,15 +9,13 @@ import { Model } from 'src/app/model';
 })
 export class CategorydetailsComponent implements OnInit {
 id:number;
-category:Model;
+category;
   constructor(private apiservice:ApiService,
     private router:Router,
     private active:ActivatedRoute) {
-     /* this.id=this.router.snapshot.params['id'];*/
      }
 
   ngOnInit() {
-    this.category=new Model();
     this.apiservice.getcategory(this.id).subscribe((data)=>{
       this.category=data;
       console.log(this.category);

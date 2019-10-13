@@ -9,7 +9,7 @@ import { Model } from 'src/app/model';
 })
 export class CategoryupdateComponent implements OnInit {
 id:number;
-category:Model;
+category;
 name:string;
   constructor(private apiservice:ApiService,
     private active:ActivatedRoute,
