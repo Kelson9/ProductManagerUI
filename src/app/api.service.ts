@@ -8,20 +8,20 @@ export class ApiService {
 
   constructor(private http:HttpClient) { 
   }
-  getcategory(id:number){
-return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category/'+id);
+  getcategory(categoryId:number){
+return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
   }
-  createcategory(category:object):Observable<object>{
-    return this.http.post('','');
+ createcategory(category:Object){
+    return this.http.post('https://sheltered-falls-45349.herokuapp.com/api/category','category');
   }
-  updatecategory(id:number,name:string):Observable<object>{
-    return this.http.put('','');
+  updatecategory(categoryId:number,name:string){
+    return this.http.put('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId,name);
   }
   getcategorylist():Observable<any>{
     return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category');
   }
-  deletecategory(id:number):Observable<any>{
-    return this.http.delete('');
+  deletecategory(categoryId:number){
+    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
   }
   }
 

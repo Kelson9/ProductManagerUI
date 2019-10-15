@@ -9,10 +9,11 @@ import { Model } from 'src/app/model';
 })
 export class CategorydetailsComponent implements OnInit {
 id:number;
-category;
+category:any;
   constructor(private apiservice:ApiService,
     private router:Router,
     private active:ActivatedRoute) {
+      this.id = this.active.snapshot.params.id;
      }
 
   ngOnInit() {

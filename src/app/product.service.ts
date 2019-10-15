@@ -8,11 +8,11 @@ export class ProductService {
 
   constructor(private http:HttpClient) { 
   }
-  getproduct(id:number):Observable<any>{
-return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/products'+'/'+id);
+  getproduct(productid:number){
+return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/products/'+productid);
   }
   createproduct(product:object):Observable<object>{
-    return this.http.post('https://sheltered-falls-45349.herokuapp.com/api/products/category/5 ','');
+    return this.http.post('','');
   }
   updateproduct(id:number,name:string):Observable<object>{
     return this.http.put('','');
@@ -20,7 +20,7 @@ return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/products'+
   getproductlist():Observable<any>{
     return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/products/');
   }
-  deleteproduct(id:number):Observable<any>{
-    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/products/id');
+  deleteproduct(productid):Observable<any>{
+    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/products/'+productid);
   }
   }

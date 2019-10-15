@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute ,Params} from '@angular/router';
 import { Model } from 'src/app/model';
 
 @Component({
@@ -9,27 +9,31 @@ import { Model } from 'src/app/model';
   styleUrls: ['./categorylist.component.css']
 })
 export class CategorylistComponent implements OnInit {
-categories:Model[];
+category:Model[];
 id:number;
   constructor(private apiservice:ApiService,
-    private router:Router) { }
+    private router:Router,
+    private active:ActivatedRoute) {
+      this.id = this.active.snapshot.params.id;
+     }
 
   ngOnInit() {
   
  this.apiservice.getcategorylist().subscribe((data:Model[])=>{
-  this.categories=data;
-  console.log(this.categories);
+  this.category=data;
+  console.log(this.category);
 });
 }
 deletecategory(id:number){
-  this.apiservice.deletecategory(this.id).subscribe((data)=>{
-    console.log(data);
+  this.apiservice.deletecategory(this.id).subscribe((data:Model[])=>{
+    this.category=data;
+    console.log(this.category);
   });
 }
 categorydetails(id:number){
   this.router.navigate(['details',id]);
 }
-categoryupdate(id:any){
+categoryupdate(id:number){
   return this.router.navigate(['/update',id])
 }
 }

@@ -17,8 +17,7 @@ name:string;
 
   ngOnInit() {
     this.products=new Model();
-    /*this.id=this.router.snapshot.params['id'];*/
-    this.ps.getproduct(this.id).subscribe(data=>{
+    this.ps.getproduct(this.id).subscribe((data:Model)=>{
       this.products=data;
       console.log(this.products);
     });
