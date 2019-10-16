@@ -1,0 +1,10 @@
+#round1{
+    border-radius:100px;
+    border:6px solid;
+    padding:15px;
+}
+#round2{
+    border-radius:100px;
+    border:6px solid;
+    background-color:rgb(209, 236, 245);
+}
