@@ -20,8 +20,8 @@ return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category/'
   getcategorylist():Observable<any>{
     return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category');
   }
-  deletecategory(categoryId:number){
-    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
+  deletecategory(category:number){
+    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+category);
   }
   }
 
