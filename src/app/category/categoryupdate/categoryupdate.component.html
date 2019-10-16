@@ -1,8 +1,8 @@
-<h3>Update</h3>
+<h3>Update category</h3>
 <div [hidden]="submitted" style="width: 400px;">
 <form (ngSubmit)="onSubmit()">
 <div class="form-group">
-<input type="text" class="form-control" id="name" required [(ngModel)]="category.name" name="name">
+<input type="text" class="form-control" id="name" placeholder="categoryname" required [(ngModel)]="category.name" name="name">
 </div>
 <div class="form-group">
 <input type="text" class="form-control" id="id" required [(ngModel)]="category.id" name="id">

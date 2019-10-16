@@ -7,8 +7,6 @@
     <tr>
         <th>Category</th>
     <th>Product name</th>
-    <th>Quantity</th>
-    <th>Price</th>
     <th>Actions</th>
     </tr>
     </thead>
@@ -16,8 +14,6 @@
     <tr *ngFor="let product of products" style="color:black">
         <td>{{product.category.name}}</td>
     <td>{{product.name}}</td>
-    <td>{{product.quantity}}</td>
-    <td>{{product.price}}</td>
     <td><button (click)="deleteproduct(product.id)" class="btn btn-info">Delete</button>
     <button (click)="productdetails(product.id)" class="btn btn-info" style="margin-left:10px">View details </button>
     <button (click)="productupdate(product.id)" class="btn btn-info">Edit</button>

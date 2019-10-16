@@ -9,23 +9,23 @@ import { Model } from 'src/app/model';
 })
 export class CategoryupdateComponent implements OnInit {
 id:number;
-category;
 name:string;
+category:Model;
   constructor(private apiservice:ApiService,
     private active:ActivatedRoute,
     private router:Router) { }
 
   ngOnInit() {
     this.category=new Model();
-    /*this.id=this.router.snapshot.params['id'];*/
-    this.apiservice.getcategory(this.id).subscribe(data=>{
+    this.id=this.active.snapshot.params.id;
+    this.apiservice.getcategory(this.id).subscribe((data:Model)=>{
       this.category=data;
       console.log(this.category);
     });
 
     }
     updatecategory(){
-    this.apiservice.updatecategory(this.id,this.name).subscribe((data:Model)=>
+    this.apiservice.updatecategory(this.category).subscribe((data:Model)=>
     {
       this.category=data;
       console.log(data);

@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { Model } from './model';
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 @Injectable({
   providedIn: 'root'
 })
@@ -11,8 +15,8 @@ export class ProductService {
   getproduct(productid:number){
 return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/products/'+productid);
   }
-  createproduct(product:object):Observable<object>{
-    return this.http.post('','');
+  createproduct(categoryId:number,product:Model):Observable<Object>{
+    return this.http.post('https://sheltered-falls-45349.herokuapp.com/api/products/category/'+categoryId,product);
   }
   updateproduct(id:number,name:string):Observable<object>{
     return this.http.put('','');

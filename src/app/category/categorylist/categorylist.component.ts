@@ -24,10 +24,9 @@ id:number;
   console.log(this.category);
 });
 }
-deletecategory(id:number){
-  this.apiservice.deletecategory(this.id).subscribe((data:Model[])=>{
-    this.category=data;
-    console.log(this.category);
+deletecategory(){
+  this.apiservice.deletecategory(this.id).subscribe((data:Model)=>{
+    console.log("success");
   });
 }
 categorydetails(id:number){

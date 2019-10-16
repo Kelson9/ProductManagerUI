@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from 'src/app/product.service';
-import {Router} from '@angular/router';
+import {Router,ActivatedRoute} from '@angular/router';
 import {Model} from 'src/app/model';
 @Component({
   selector: 'app-createproduct',
@@ -10,21 +10,25 @@ import {Model} from 'src/app/model';
 export class CreateproductComponent implements OnInit {
 product:Model=new Model();
 submitted=false;
+id:number;
   constructor(private ps:ProductService,
-    private router:Router) { }
+    private router:Router,
+    private active:ActivatedRoute) {
+      this.id=this.active.snapshot.params.id;
+     }
 
   ngOnInit() {
   }
-newCategory():void{
+newproduct():void{
   this.submitted=false;
   this.product=new Model();
-
 }
 save(){
-  this.ps.createproduct(this.product).subscribe(data=>{
-    console.log(data);
-    this.product=new Model();});
-    this.gotoList();
+  this.ps.createproduct(this.id,this.product).subscribe(data=>{
+    this.product=new Model();
+    console.log(this.product);
+  });
+  this.gotoList();
 }
 onSubmit(){
   this.submitted=true;

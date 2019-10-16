@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient,HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { Model } from './model';
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 @Injectable({
   providedIn: 'root'
 })
@@ -11,17 +15,17 @@ export class ApiService {
   getcategory(categoryId:number){
 return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
   }
- createcategory(category:Object){
-    return this.http.post('https://sheltered-falls-45349.herokuapp.com/api/category','category');
+ createcategory(category:Model){
+    return this.http.post('https://sheltered-falls-45349.herokuapp.com/api/category',category);
   }
-  updatecategory(categoryId:number,name:string){
-    return this.http.put('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId,name);
+  updatecategory(category:Model){
+    return this.http.put('https://sheltered-falls-45349.herokuapp.com/api/category/'+category.id,'category');
   }
   getcategorylist():Observable<any>{
     return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category');
   }
-  deletecategory(categoryId:number){
-    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
+  deletecategory(id:number){
+    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+id);
   }
   }
 
