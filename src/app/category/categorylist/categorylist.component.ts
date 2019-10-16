@@ -9,7 +9,7 @@ import { Model } from 'src/app/model';
   styleUrls: ['./categorylist.component.css']
 })
 export class CategorylistComponent implements OnInit {
-category:Model[];
+category:Model;
 id:number;
   constructor(private apiservice:ApiService,
     private router:Router,
@@ -19,14 +19,17 @@ id:number;
 
   ngOnInit() {
   
- this.apiservice.getcategorylist().subscribe((data:Model[])=>{
+ this.apiservice.getcategorylist().subscribe((data:Model)=>{
   this.category=data;
   console.log(this.category);
 });
 }
 deletecategory(){
-  this.apiservice.deletecategory(this.id).subscribe((data:Model)=>{
-    console.log("success");
+  this.apiservice.deletecategory(this.category).subscribe((data:Model)=>{
+    this.category=data;
+    console.log(this.category);
+    this.category=new Model()
+   
   });
 }
 categorydetails(id:number){

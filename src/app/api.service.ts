@@ -19,13 +19,13 @@ return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category/'
     return this.http.post('https://sheltered-falls-45349.herokuapp.com/api/category',category);
   }
   updatecategory(category:Model){
-    return this.http.put('https://sheltered-falls-45349.herokuapp.com/api/category/'+category.id,'category');
+    return this.http.put('https://sheltered-falls-45349.herokuapp.com/api/category/'+category.id,category);
   }
   getcategorylist():Observable<any>{
     return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category');
   }
-  deletecategory(id:number){
-    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+id);
+  deletecategory(category:Model){
+    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+category.id);
   }
   }
 

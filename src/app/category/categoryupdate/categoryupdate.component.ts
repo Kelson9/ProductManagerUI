@@ -28,7 +28,7 @@ category:Model;
     this.apiservice.updatecategory(this.category).subscribe((data:Model)=>
     {
       this.category=data;
-      console.log(data);
+      console.log(this.category);
       this.category=new Model();
     });
    
@@ -39,6 +39,7 @@ category:Model;
   }
   gotoList(){
     this.router.navigate(['/category']);
+    console.log('Loading...');
   }
 }
 
