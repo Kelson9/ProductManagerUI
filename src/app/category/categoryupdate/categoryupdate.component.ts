@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { Model } from 'src/app/model';
+import { Category } from 'src/app/category';
 @Component({
   selector: 'app-categoryupdate',
   templateUrl: './categoryupdate.component.html',
@@ -10,26 +10,26 @@ import { Model } from 'src/app/model';
 export class CategoryupdateComponent implements OnInit {
 id:number;
 name:string;
-category:Model;
+category:Category;
   constructor(private apiservice:ApiService,
     private active:ActivatedRoute,
     private router:Router) { }
 
   ngOnInit() {
-    this.category=new Model();
+    this.category=new Category();
     this.id=this.active.snapshot.params.id;
-    this.apiservice.getcategory(this.id).subscribe((data:Model)=>{
+    this.apiservice.getcategory(this.id).subscribe((data:Category)=>{
       this.category=data;
       console.log(this.category);
     });
 
     }
     updatecategory(){
-    this.apiservice.updatecategory(this.category).subscribe((data:Model)=>
+    this.apiservice.updatecategory(this.category).subscribe((data:Category)=>
     {
       this.category=data;
       console.log(this.category);
-      this.category=new Model();
+      this.category=new Category();
     });
    
     this.gotoList();

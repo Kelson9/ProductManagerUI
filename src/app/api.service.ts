@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { Model } from './model';
+import { Category } from './category';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -15,17 +15,17 @@ export class ApiService {
   getcategory(categoryId:number){
 return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
   }
- createcategory(category:Model){
+ createcategory(category:Category){
     return this.http.post('https://sheltered-falls-45349.herokuapp.com/api/category',category);
   }
-  updatecategory(category:Model){
+  updatecategory(category:Category){
     return this.http.put('https://sheltered-falls-45349.herokuapp.com/api/category/'+category.id,category);
   }
   getcategorylist():Observable<any>{
     return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category');
   }
-  deletecategory(category:Model){
-    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+category.id);
+  deletecategory(categoryId:number){
+    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
   }
   }
 

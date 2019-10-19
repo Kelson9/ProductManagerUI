@@ -10,11 +10,11 @@
 </tr>
 </thead>
 <tbody>
-<tr *ngFor="let category of category" style="color:black" >
+<tr *ngFor="let category of categories" style="color:black" >
 <td>{{category.name}}</td>
-<td><button (click)="deletecategory(category.id)" class="btn btn-info">Delete</button>
-<button (click)="categorydetails(category.id)" class="btn btn-info" style="margin-left:10px">View details </button>
-<button (click)="categoryupdate(category.id)" class="btn btn-info">Edit</button>
+<td><button (click)="categorydetails(category.id)" class="btn btn-info" style="margin-left:10px">View details </button>
+<button (click)="categoryupdate(category.id)" class="btn btn-success">Edit</button>
+<button (click)="deletecategory(category.id)" class="btn btn-danger">Delete</button>
 </td>
 </tr>
 </tbody>

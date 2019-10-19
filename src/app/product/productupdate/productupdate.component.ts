@@ -1,39 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import {ProductService} from 'src/app/product.service';
-import {Model} from 'src/app/model';
+import { Product } from 'src/app/product.model';
+import { Category } from 'src/app/category';
 @Component({
   selector: 'app-productupdate',
   templateUrl: './productupdate.component.html',
   styleUrls: ['./productupdate.component.css']
 })
 export class ProductupdateComponent implements OnInit {
-id:number;
-products:Model;
+products:Product;
+category:Category;
 name:string;
+id:number;
   constructor(private ps:ProductService,
     private active:ActivatedRoute,
     private router:Router) { }
 
   ngOnInit() {
-    this.products=new Model();
-    this.ps.getproduct(this.id).subscribe((data:Model)=>{
+    this.products=new Product();
+    this.ps.getproduct(this.id).subscribe((data:Product)=>{
       this.products=data;
       console.log(this.products);
     });
 
     }
-    updatecategory(){
-    this.ps.updateproduct(this.id,this.name).subscribe((data:Model)=>
+    updateproduct(){
+    this.ps.updateproduct(this.id,this.products).subscribe((data:Product)=>
     {
       this.products=data;
       console.log(data);
-    });
-    this.products=new Model();
+    this.products=new Product();
+  });
     this.gotoList();
   }
   onSubmit(){
-    this.updatecategory();
+    this.updateproduct();
   }
   gotoList(){
     this.router.navigate(['/product']);

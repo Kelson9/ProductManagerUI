@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { Router,ActivatedRoute,Params } from '@angular/router';
-import { Model } from 'src/app/model';
 @Component({
   selector: 'app-categorydetails',
   templateUrl: './categorydetails.component.html',

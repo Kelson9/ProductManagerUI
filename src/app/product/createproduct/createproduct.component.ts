@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from 'src/app/product.service';
 import {Router,ActivatedRoute} from '@angular/router';
-import {Model} from 'src/app/model';
+import { Product } from 'src/app/product.model';
+import { Category } from 'src/app/category';
 @Component({
   selector: 'app-createproduct',
   templateUrl: './createproduct.component.html',
   styleUrls: ['./createproduct.component.css']
 })
 export class CreateproductComponent implements OnInit {
-product:Model=new Model();
+product:Product=new Product();
+category:Category;
 submitted=false;
 id:number;
   constructor(private ps:ProductService,
@@ -18,14 +20,12 @@ id:number;
      }
 
   ngOnInit() {
-  }
-newproduct():void{
-  this.submitted=false;
-  this.product=new Model();
+  
+  this.product=new Product();
 }
 save(){
-  this.ps.createproduct(this.id,this.product).subscribe(data=>{
-    this.product=new Model();
+  this.ps.createproduct(this.id,this.product).subscribe((data:Product)=>{
+    this.product=new Product();
     console.log(this.product);
   });
   this.gotoList();
