@@ -1,41 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import {Router,ActivatedRoute} from '@angular/router';
+import {Router} from '@angular/router';
 import {ProductService} from 'src/app/product.service';
 import { Product } from 'src/app/product.model';
-import { Category } from 'src/app/category';
+import { Category } from 'src/app/category.model';
+import { ApiService } from 'src/app/api.service';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-productupdate',
   templateUrl: './productupdate.component.html',
   styleUrls: ['./productupdate.component.css']
 })
 export class ProductupdateComponent implements OnInit {
-products:Product;
-category:Category;
-name:string;
+product:any={};
+categories:Category[];
 id:number;
-  constructor(private ps:ProductService,
-    private active:ActivatedRoute,
-    private router:Router) { }
+product_category: any = {};
+  constructor(private ps:ProductService,private apiservice:ApiService,
+    private router:Router) {
+      console.log(this.product.id);
+     }
 
   ngOnInit() {
-    this.products=new Product();
-    this.ps.getproduct(this.id).subscribe((data:Product)=>{
-      this.products=data;
-      console.log(this.products);
+    this.apiservice.getcategorylist().subscribe((data: any)=>{
+      this.categories=data;
+      console.log(this.categories);
     });
-
     }
-    updateproduct(){
-    this.ps.updateproduct(this.id,this.products).subscribe((data:Product)=>
+   
+  
+  onSubmit(addPForm: NgForm){
+    this.ps.updateproduct(this.product_category.id,this.product.id,addPForm.value).subscribe((data:any)=>
     {
-      this.products=data;
-      console.log(data);
-    this.products=new Product();
-  });
+      console.log("successfully created");
+    });
+    
     this.gotoList();
-  }
-  onSubmit(){
-    this.updateproduct();
   }
   gotoList(){
     this.router.navigate(['/product']);

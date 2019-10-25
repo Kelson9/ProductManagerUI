@@ -21,6 +21,12 @@ category:any;
       console.log(this.category);
     });
     }
+    actuator(){
+      this.apiservice.actuator().subscribe((data)=>{
+        this.category=data;
+        console.log(this.category);
+      });
+    }
   
 list(){
   this.router.navigate(['category']);

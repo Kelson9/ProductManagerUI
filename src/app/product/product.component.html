@@ -14,9 +14,9 @@
     <tr *ngFor="let product of products" style="color:black">
         <td>{{product.category.name|uppercase}}</td>
     <td>{{product.name|uppercase}}</td>
-    <td><button (click)="deleteproduct(product.id)" class="btn btn-info">Delete</button>
-    <button (click)="productdetails(product.id)" class="btn btn-info" style="margin-left:10px">View details </button>
-    <button (click)="productupdate(product.id)" class="btn btn-info">Edit</button>
+   <td><button (click)="productdetails(product.id)" class="btn btn-info" style="margin-left:10px">View details </button>
+    <button (click)="productupdate(product.id)" class="btn btn-success">Edit</button>
+<button (click)="deleteproduct(product.id)" class="btn btn-danger">Delete</button>
     </td>
     </tr>
     </tbody>

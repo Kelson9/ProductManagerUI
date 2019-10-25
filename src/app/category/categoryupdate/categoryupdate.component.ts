@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { Category } from 'src/app/category';
+import { Category } from 'src/app/category.model';
 @Component({
   selector: 'app-categoryupdate',
   templateUrl: './categoryupdate.component.html',

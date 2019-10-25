@@ -16,6 +16,8 @@ import {ProductService} from './product.service';
 import { CreateproductComponent } from './product/createproduct/createproduct.component';
 import { ProductdetailsComponent } from './product/productdetails/productdetails.component';
 import { ProductupdateComponent } from './product/productupdate/productupdate.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,6 @@ import { ProductupdateComponent } from './product/productupdate/productupdate.co
     CreateproductComponent,
     ProductdetailsComponent,
     ProductupdateComponent,
-
     
   ],
   imports: [
@@ -36,7 +37,13 @@ import { ProductupdateComponent } from './product/productupdate/productupdate.co
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
 
   ],
   providers: [ApiService,
