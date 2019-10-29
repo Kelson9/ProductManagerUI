@@ -3,13 +3,13 @@
     <h2>CATEGORY</h2>
         <div class="panel-body"></div>
         <table class="table table-striped">
-<thead>
+<thead style="background-color:green">
 <tr>
 <th>Category name</th>
 <th>Actions</th>
 </tr>
 </thead>
-<tbody>
+<tbody style="background-color:green">
 <tr *ngFor="let category of categories" style="color:black" >
 <td>{{category.name}}</td>
 <td><button (click)="categorydetails(category.id)" class="btn btn-info" style="margin-left:10px">View details </button>

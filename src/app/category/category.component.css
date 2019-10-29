@@ -8,3 +8,11 @@
     border:6px solid;
     background-color:rgb(209, 236, 245);
 }*/
+mat-sidenav{
+    width:200px;
+background-color:lightgreen;
+}
+#cl{
+    color:orange;
+    font-size: 25px;
+}

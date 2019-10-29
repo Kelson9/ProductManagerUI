@@ -1,6 +1,6 @@
 <p>Create a product</p>
 <div style="width:400px;">
-        <form name="form" (ngSubmit)="onSubmit(addPForm)" #addPForm="ngForm">
+        <form name="form" (ngSubmit)="addPForm.form.valid && onSubmit(addPForm)" #addPForm="ngForm">
                 <span>Select a category:</span>
                 <select name="category" [(ngModel)]="product_category">
                         <option *ngFor="let category of categories" value="{{category.id}}" [ngValue]="category">

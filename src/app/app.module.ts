@@ -18,6 +18,11 @@ import { ProductdetailsComponent } from './product/productdetails/productdetails
 import { ProductupdateComponent } from './product/productupdate/productupdate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HomeComponent } from './home/home.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +35,7 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
     CreateproductComponent,
     ProductdetailsComponent,
     ProductupdateComponent,
+    HomeComponent,
     
   ],
   imports: [
@@ -44,7 +50,8 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
     MatListModule,
     MatButtonModule,
     MatIconModule,
-
+MatProgressSpinnerModule,
+AngularFireModule,
   ],
   providers: [ApiService,
   ProductService],

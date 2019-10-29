@@ -22,7 +22,7 @@ deletecategory(id: number){
   this.apiservice.deletecategory(id).subscribe((data)=>{
 console.log(data);
   });
-  console.log("deleted category successfully");
+  alert("A category can be deleted only if a product under it has been deleted");
 }
 categorydetails(id:number){
   this.router.navigate(['details',id]);

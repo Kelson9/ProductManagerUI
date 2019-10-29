@@ -1,9 +1,7 @@
 <h3>Update</h3>
-<div [hidden]="submitted" style="width: 400px;">
-<form (ngSubmit)="onSubmit()" >
-                <span>Select a category:</span> <select ngModel
-                name = "category">
-                        <option *ngFor="let category of categories">
+<form (ngSubmit)="addPForm.form.valid && onSubmit(addPForm)" #addPForm="ngForm" >
+                <span>Select a category:</span> <select  name="category" [(ngModel)]="product_category">
+                        <option *ngFor="let category of categories"  value="{{category.id}}" [ngValue]="category">
         {{category.name}}
                         </option>
                 </select>     
@@ -18,5 +16,3 @@
 </div>
 <button type="submit" class="btn btn-success">submit</button>
 </form>
-
-</div>

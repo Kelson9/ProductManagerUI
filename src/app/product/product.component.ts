@@ -27,6 +27,7 @@ deleteproduct(id: number){
     console.log(data);
   });
   console.log("deleted successfully");
+  alert('successfully deleted ');
 }
 productdetails(id:number){
   this.router.navigate(['product',id]);

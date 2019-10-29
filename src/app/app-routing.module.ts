@@ -8,8 +8,9 @@ import {CreateproductComponent} from './product/createproduct/createproduct.comp
 import { ProductdetailsComponent } from './product/productdetails/productdetails.component';
 import { ProductupdateComponent } from './product/productupdate/productupdate.component';
 import { ProductComponent } from './product/product.component';
-const Routes:Routes=[
-    {path:'',redirectTo:'category',pathMatch:'full'},
+import { HomeComponent } from './home/home.component';
+const Route:Routes=[
+    {path:'',redirectTo:'home',pathMatch:'full'},
     {path:'add',component:CreatecategoryComponent},
     {path:'category',component:CategorylistComponent},
     {path:'details/:id',component:CategorydetailsComponent},
@@ -17,10 +18,11 @@ const Routes:Routes=[
     {path:'addproduct',component:CreateproductComponent},
     {path:'product',component:ProductComponent},
      {path:'product/:id',component:ProductdetailsComponent},
-     {path:'productupdate/:id',component:ProductupdateComponent}
+     {path:'productupdate/:id',component:ProductupdateComponent},
+     {path:'home',component:HomeComponent},
 ]
 @NgModule({
-imports:[RouterModule.forRoot(Routes)],
+imports:[RouterModule.forRoot(Route)],
 exports:[RouterModule]
 })
 

@@ -1,0 +1,12 @@
+.body{
+    background-color:white;
+}
+#p{
+    padding-top:1px;
+    padding-right:100px;
+    padding-bottom:50px;
+    padding-left:100px;
+    border:1px solid black;
+    background-color:lightslategrey;
+    height:300px;
+}

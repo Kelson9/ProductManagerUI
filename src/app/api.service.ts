@@ -12,23 +12,22 @@ export class ApiService {
 
   constructor(private http:HttpClient) { 
   }
+  private url="https://sheltered-falls-45349.herokuapp.com/api/category";
   getcategory(categoryId:number){
-return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
+return this.http.get(this.url +'/' +categoryId);
   }
  createcategory(category:Category){
    console.log('successfully created'+'/'+category.name);
-    return this.http.post('https://sheltered-falls-45349.herokuapp.com/api/category',category);
+    return this.http.post(this.url,category);
   }
   updatecategory(category:Category){
-    return this.http.put('https://sheltered-falls-45349.herokuapp.com/api/category/'+category.id,category);
+    return this.http.put(this.url+'/'+category.id,category);
   }
   getcategorylist():Observable<any>{
-    return this.http.get('https://sheltered-falls-45349.herokuapp.com/api/category');
+    return this.http.get(this.url);
   }
   deletecategory(categoryId:number){
-    return this.http.delete('https://sheltered-falls-45349.herokuapp.com/api/category/'+categoryId);
+    return this.http.delete(this.url+'/'+categoryId);
   }
-  actuator():Observable<any>{
-    return this.http.get('https://sheltered-falls-45349.herokuapp.com/actuator');
-  }
+
 }
