@@ -20,8 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HomeComponent } from './home/home.component';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -51,7 +49,6 @@ import { environment } from '../environments/environment';
     MatButtonModule,
     MatIconModule,
 MatProgressSpinnerModule,
-AngularFireModule,
   ],
   providers: [ApiService,
   ProductService],

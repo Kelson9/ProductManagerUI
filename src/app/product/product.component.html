@@ -7,6 +7,7 @@
     <tr>
         <th>Category</th>
     <th>Product name</th>
+    <th>image</th>
     <th>Actions</th>
     </tr>
     </thead>
@@ -14,6 +15,7 @@
     <tr *ngFor="let product of products" style="color:black">
         <td>{{product.category.name|uppercase}}</td>
     <td>{{product.name|uppercase}}</td>
+    <td><img src="{{product.image}}" width="200px"></td>
    <td><button (click)="productdetails(product.id)" class="btn btn-info" style="margin-left:10px">View details </button>
     <button (click)="productupdate(product.id)" class="btn btn-success">Edit</button>
 <button (click)="deleteproduct(product.id)" class="btn btn-danger">Delete</button>
